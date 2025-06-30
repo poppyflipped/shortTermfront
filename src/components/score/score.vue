@@ -66,7 +66,43 @@
         showCheck
         :tableHigh="tableHigh"
       ></VmBaseTable>
-    </el-card>
+      </el-card>
+        <el-dialog
+        title="成绩录入"
+        :visible.sync="editDialogVisible"
+        width="500px"
+      >
+        <el-form :model="editForm" label-width="150px">
+          <el-row v-for="item in scoreItems" :key="item.key">
+            <el-col :span="24">
+              <el-form-item :label="item.label + ' - 普通分'">
+                <el-input-number
+                  v-model="editForm[item.key].normal"
+                  :min="0"
+                  :max="100"
+                  @change="updateTotalScore"
+                />
+              </el-form-item>
+              <el-form-item :label="item.label + ' - 特别分'">
+                <el-input-number
+                  v-model="editForm[item.key].special"
+                  :min="0"
+                  :max="100"
+                  @change="updateTotalScore"
+                />
+              </el-form-item>
+            </el-col>
+          </el-row>
+          <el-form-item label="总得分">
+            <el-input v-model="editForm.totalScore" disabled />
+          </el-form-item>
+        </el-form>
+        <div slot="footer" class="dialog-footer">
+          <el-button @click="editDialogVisible = false">取消</el-button>
+          <el-button type="primary" @click="saveScore">保存</el-button>
+        </div>
+    </el-dialog>
+
   </div>
 </template>
 
@@ -215,6 +251,23 @@
             }
           }
         ],
+        editDialogVisible: false,
+        editingRow: null,
+        // 编辑表单
+        editForm: {
+          performance: {normal:0, special:0},
+          homework: {normal:0, special:0},
+          project: {normal:0, special:0},
+          experiment: {normal:0, special:0},
+          totalScore: 0,
+        },
+        // 每项配置
+        scoreItems: [
+          { key: "performance", label: "课堂表现", total: 100, normalRatio:0.15, specialRatio:0.05 },//0.2
+          { key: "homework", label: "课后作业", total: 100, normalRatio:0.08, specialRatio:0.02 },//0.1
+          { key: "project", label: "大作业", total: 100, normalRatio:0.48, specialRatio:0.02 },//0.5
+          { key: "experiment", label: "实验", total:100, normalRatio:0.17, specialRatio:0.03 }//0.2
+        ],
       }
     },
     methods : {
@@ -322,9 +375,32 @@
         this.searchValue.$offset = page.offset;
         this.click(this.searchValue)
       },
-      editMethod(data) {
-        this.showInput = this.showInput === data.no ? '' : data.no ;
-        this.batch = false;
+      editMethod(row) {
+        this.editingRow = row;
+        // 重置表单
+        this.editForm = {
+          performance: {normal:0, special:0},
+          homework: {normal:0, special:0},
+          project: {normal:0, special:0},
+          experiment: {normal:0, special:0},
+          totalScore: 0
+        };
+        this.editDialogVisible = true;
+      },
+      updateTotalScore() {
+        let total = 0;
+        this.scoreItems.forEach(item => {
+          const normal = this.editForm[item.key].normal || 0;
+          const special = this.editForm[item.key].special || 0;
+          total += normal * item.normalRatio * (item.total / (item.total)) + special * item.specialRatio * (item.total / (item.total));
+        });
+        this.editForm.totalScore = Math.round(total * 100) / 100;
+      },
+      saveScore() {
+        // 保存逻辑
+        this.editingRow.scoreByUser = this.editForm.totalScore;
+        this.editDialogVisible = false;
+        this.$message.success("成绩已保存");
       },
       batchMethod () {
         this.batch = true;
