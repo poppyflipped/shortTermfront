@@ -18,7 +18,7 @@
         <i class="el-icon-s-unfold"></i>
         <span slot="title">&#12288成绩查询</span>
       </el-menu-item>
-
+      
       <el-menu-item index="analysis" :class="{active: $route.name === '成绩详情'}">
         <i class="el-icon-s-data"></i>
         <span slot="title">&#12288成绩详情</span>

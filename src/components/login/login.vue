@@ -11,12 +11,12 @@
     <div class="star orange"></div> -->
     <!-- <div class="title">
       <h2 style="color:white;">
-        学生成绩管理系统
+        学生学习情况登记系统
       </h2>
     </div> -->
     <div class="loginForm">
       <div style="text-align: center; padding: 7vw 0 0 0; font-size: 18px">
-        <h2 style="color: white">学生成绩管理系统</h2>
+        <h2 style="color: white">学生学习情况登记系统</h2>
       </div>
       <el-tabs
         type="border-card"
