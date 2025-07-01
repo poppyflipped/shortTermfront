@@ -115,6 +115,7 @@
           '/api/sms/user/student/getStudentList',
           {params: that.searchValue}
         ).then(response => {
+          console.log("AAAAA");
           this.dataTable = response.data.items;
           this.table.total = response.data.totalCount
         }).catch(error => {

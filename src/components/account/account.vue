@@ -115,6 +115,7 @@
           switch (this.lastNode) {
             case "学生":
               this.getStudentList(this.searchValue);
+              console.log("123456");
               break;
             case "教师":
               this.getTeacherList(this.searchValue);
@@ -159,6 +160,7 @@
           '/api/sms/user/student/getStudentList',
           {params: obj}
         ).then(response => {
+          console.log("ASSS");
           this.dataTable = response.data.items;
           this.table.total = response.data.totalCount
         }).catch(error => {

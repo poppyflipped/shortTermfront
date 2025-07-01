@@ -134,13 +134,7 @@
         this.form.year = 2016;
         let month = new Date().getMonth()+1;
         this.form.term = this.termArr[0].value;
-        // if (month > 2 && month < 6) {
-        //   // 上学期
-        //   this.form.term = this.termArr[0].value;
-        // } else {
-        //   // 下学期
-        //   this.form.term = this.termArr[1].value;
-        // }
+
         this.click();
       },
       click () {

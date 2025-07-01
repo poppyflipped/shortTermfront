@@ -12,9 +12,6 @@
           <Tabs></Tabs>
           <!--内容区-->
           <router-view />
-          <!-- <div class="copyright">
-            Copyright @2023 忧伤大白兔
-          </div> -->
         </el-main>
       </el-container>
     </el-container>

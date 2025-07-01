@@ -2,11 +2,6 @@
   <el-dialog v-dialogDrag :title="title" :visible.sync="dialog" :close-on-click-modal=false append-to-body width="800px">
     <el-form ref="form" :model="form" :rules="rules">
       <el-row>
-        <!--<el-col :span="12">-->
-        <!--<el-form-item label="编号：" prop="id" :label-width="formLabelWidth">-->
-        <!--<el-input v-model="form.id" maxlength="15" clearable></el-input>-->
-        <!--</el-form-item>-->
-        <!--</el-col>-->
         <el-form-item label="姓名：" prop="realName" :label-width="formLabelWidth">
           <el-input v-model="form.realName" maxlength="15" clearable></el-input>
         </el-form-item>

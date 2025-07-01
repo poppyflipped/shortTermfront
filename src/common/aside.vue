@@ -95,10 +95,6 @@
     text-align: center;
     border-radius: 55px;
   }
-  /*/deep/ .el-menu-item.is-active {*/
-    /*background-color: #409EFF;*/
-    /*color: white;*/
-  /*}*/
   /deep/ .el-menu-item-group__title {
     padding: 0;
   }

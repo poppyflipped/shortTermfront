@@ -39,14 +39,7 @@ axios.interceptors.request.use(config => {
 //
 var count = 0;
 axios.interceptors.response.use(response => {
-    // loadingInstance.close()
-    // 判断一下响应中是否有 token，如果有就直接使用此 token 替换掉本地的 token。你可以根据你的业务需求自己编写更新 token 的逻辑
-    // var token = response.headers.freshToken;
-    // if (token) {
-    //   // 如果 header 中存在 token，那么触发 refreshToken 方法，替换本地的 token
-    //   $cookies.set('userToken', token);
-    //   config.headers.Authorization = token;
-    // }
+
     return response;
   },
   error => {
@@ -61,12 +54,6 @@ axios.interceptors.response.use(response => {
       Message.error("身份信息超时，请重新登录！", {icon: 1, time: 2000});
       $cookies.remove('userToken');
       setTimeout(function () {
-        //跳转到登录页
-        // var host = window.location.host + '/login';
-        // if (host.indexOf("http://") == -1) {
-        //   host = 'http://' + host;
-        // }
-        // window.location.href = host;
 
         window.location.href = '/#/login';
       }, 3000);
