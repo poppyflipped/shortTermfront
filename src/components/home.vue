@@ -89,7 +89,7 @@ export default {
     margin: 0;
   }
   .asideWidth {
-    /*background-image: linear-gradient(rgba(90,139,255,1), white);*/
+    
     border-right: 1px solid #e6e6e6;
     width: 240px;
     transition: 0.2s;

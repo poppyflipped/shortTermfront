@@ -1,4 +1,4 @@
-/* eslint-disable */
+
 require('script-loader!file-saver');
 require('script-loader!./Blob');
 require('script-loader!xlsx/dist/xlsx.core.min');
@@ -97,18 +97,16 @@ export function export_table_to_excel(id) {
   var oo = generateArray(theTable);
   var ranges = oo[1];
 
-  /* original data */
+
   var data = oo[0];
   var ws_name = "SheetJS";
   console.log(data);
 
   var wb = new Workbook(), ws = sheet_from_array_of_arrays(data);
 
-  /* add ranges to worksheet */
-  // ws['!cols'] = ['apple', 'banan'];
+  
   ws['!merges'] = ranges;
 
-  /* add worksheet to workbook */
   wb.SheetNames.push(ws_name);
   wb.Sheets[ws_name] = ws;
 
@@ -123,7 +121,6 @@ function formatJson(jsonData) {
 
 export function export_json_to_excel(th, jsonData, defaultTitle) {
 
-  /* original data */
 
   var data = jsonData;
   data.unshift(th);
@@ -132,7 +129,7 @@ export function export_json_to_excel(th, jsonData, defaultTitle) {
   var wb = new Workbook(), ws = sheet_from_array_of_arrays(data);
 
 
-  /* add worksheet to workbook */
+
   wb.SheetNames.push(ws_name);
   wb.Sheets[ws_name] = ws;
 

@@ -1,8 +1,3 @@
-<!--
- * @Description: 
- * @Author: Rabbiter
- * @Date: 2023-03-03 20:03:53
--->
 <template>
   <div id="app" :class="!silent ? '' : 'silent'">
     <router-view v-if="isRouterAlive"></router-view>
