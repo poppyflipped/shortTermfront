@@ -3,7 +3,7 @@
     
     <!-- <img src="../assets/header.png" alt="" width="40" height="40" style="margin: 10px 90px 10px 50px;float: left" /> -->
     <i class="el-icon-menu collapse" @click="clickCollapse" style="margin: 0 20px 0 40px;float: left"></i>
-    <div class="misName">学生成绩管理系统</div>
+    <div class="misName">学生学习情况登记系统</div>
     <el-switch v-model="silent"
                v-if="userInfo.level === 0"
                @change="switchChange"
