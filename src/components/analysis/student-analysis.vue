@@ -44,6 +44,7 @@
       <el-row style="">
         <el-col :span="6">总绩点：{{total.point}}</el-col>
         <el-col :span="6">总学分：{{total.credits}}</el-col>
+        <el-col :span="6">排名：{{total.rank}}</el-col>
       </el-row>
     </el-card>
   </div>
@@ -79,7 +80,8 @@
         }],
         total: {
           credits: '',
-          point: ''
+          point: '',
+          rank: '6' // 添加排名字段，默认值为6
         },
         userInfo: {},
         showChart: true,
@@ -200,10 +202,15 @@
             let obj = response.data;
             let current = {
               credits: this.dealTotal(obj.credits),
-              point: this.dealTotal(obj.point)
+              point: this.dealTotal(obj.point),
+              rank: this.total.rank // 保持排名数据
             };
             this.total = {...current};
           })
+      },
+      // 处理总数显示
+      dealTotal(value) {
+        return value || '0';
       }
     },
     computed: {
@@ -252,6 +259,9 @@
     box-sizing: border-box;
     width: 98%;
     margin: 0 0 0 12px;
+  }
+  .info .el-col {
+    padding-left: 20px;
   }
 </style>
 <style>

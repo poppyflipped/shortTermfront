@@ -1,9 +1,4 @@
-<!--
- * @Description: 
- * @Author: Rabbiter
- * @Date: 2023-05-18 12:19:02
--->
-// 验证码模块
+
 <template>
   <el-row>
     <el-col :span="12">

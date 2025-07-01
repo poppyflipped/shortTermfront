@@ -102,9 +102,7 @@
         </el-row>
       </el-form-item>
 
-      <!-- <el-form-item>
-        <Verify ref="verify" style="margin-left: 50px;"></Verify>
-      </el-form-item> -->
+      
 
       <el-form-item>
         <div style="float: right; margin-top: -20px">
@@ -332,9 +330,7 @@ export default {
   text-align: center;
 }
 
-/*.el-tabs, .el-tabs__header {*/
-/*border-radius: 18px;*/
-/*}*/
+
 </style>
 <style scoped>
 /deep/ .form {

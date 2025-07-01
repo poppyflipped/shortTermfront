@@ -100,7 +100,7 @@
   }
   .el-menu {
     border: 0;
-    /*background-image: linear-gradient(#4777e7, rgba(90,139,255,0.68));*/
+   
   }
 
   .active {

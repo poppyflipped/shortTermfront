@@ -1,19 +1,6 @@
 <template>
   <div id="login" :style="note">
-    <!-- <div class="star test"></div>
-    <div class="star pink"></div>
-    <div class="star blue"></div>
-    <div class="star black"></div>
-    <div class="star red"></div>
-    <div class="star white"></div>
-    <div class="star yellow"></div>
-    <div class="star gray"></div>
-    <div class="star orange"></div> -->
-    <!-- <div class="title">
-      <h2 style="color:white;">
-        学生学习情况登记系统
-      </h2>
-    </div> -->
+    
     <div class="loginForm">
       <div style="text-align: center; padding: 7vw 0 0 0; font-size: 18px">
         <h2 style="color: white">学生学习情况登记系统</h2>
@@ -121,7 +108,7 @@ body,
 
 .loginForm {
   width: 400px;
-  /* margin: 0 580px 0 580px; */
+
 }
 .title {
   padding: 10px 10px;

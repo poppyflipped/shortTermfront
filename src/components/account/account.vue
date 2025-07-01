@@ -271,7 +271,7 @@
     },
     mounted () {
       this.table = this.$refs['account_table'];
-      // this.search();
+      
       this.getTree();
     }
   }

@@ -1,7 +1,7 @@
 <template>
   <div style="color: white" >
     
-    <!-- <img src="../assets/header.png" alt="" width="40" height="40" style="margin: 10px 90px 10px 50px;float: left" /> -->
+    
     <i class="el-icon-menu collapse" @click="clickCollapse" style="margin: 0 20px 0 40px;float: left"></i>
     <div class="misName">学生学习情况登记系统</div>
     <el-switch v-model="silent"
@@ -160,7 +160,7 @@
   }
   /*打开默哀模式时*/
   /deep/ .el-switch__label.is-active {
-   /*filter:progid:DXImageTransform.Microsoft. BasicImage(grayscale=1); -webkit-filter: grayscale(100%);*/
+   
     color: #fff !important;
   }
   /*关闭默哀模式时*/

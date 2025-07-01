@@ -8,8 +8,6 @@ axios.defaults.baseURL ='http://localhost:9121/'; //配置请求地址
 
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 axios.defaults.withCredentials = true;
-
-// var loadingInstance
 axios.interceptors.request.use(config => {
   //Ajax请求执行该方法，请求带上token
   var token = localStorage.getItem('userToken');
@@ -27,10 +25,8 @@ axios.interceptors.request.use(config => {
     config.url += config.url.match(/\?/) ? "&" : "?";
     config.url += "_dc=" + new Date().getTime();
   }
-  // loadingInstance = Loading.service({ fullscreen: true })
   return config;
 }, error => {  //请求错误处理
-  // loadingInstance.close()
   Message.error({
     message: '加载超时'
   });

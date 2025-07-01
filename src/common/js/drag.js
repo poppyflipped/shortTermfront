@@ -7,7 +7,6 @@ Vue.directive('dialogDrag', {
     const dragDom = el.querySelector('.el-dialog');
     dialogHeaderEl.style.cursor = 'move';
 
-    // 获取原有属性 ie dom元素.currentStyle 火狐谷歌 window.getComputedStyle(dom元素, null);
     const sty = dragDom.currentStyle || window.getComputedStyle(dragDom, null);
 
     dialogHeaderEl.onmousedown = (e) => {
